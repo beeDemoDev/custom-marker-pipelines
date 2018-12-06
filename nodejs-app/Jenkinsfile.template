@@ -6,8 +6,9 @@ pipeline {
     buildDiscarder(logRotator(numToKeepStr: '2'))
   }
   stages {
-  agent { label 'nodejs-app' }
+ 
     stage('Say Hello') {
+     agent { label 'nodejs-app' }
       steps {
         echo 'Hello World!'   
         sh 'node --version'
